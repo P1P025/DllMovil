@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.androidApplication)
+    id("org.jetbrains.kotlin.android")
 }
 
 android {
@@ -26,10 +27,14 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+
 }
 
 dependencies {
-
+    implementation("androidx.recyclerview:recyclerview:1.2.1")
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
@@ -37,6 +42,7 @@ dependencies {
     implementation(libs.legacy.support.v4)
     implementation(libs.lifecycle.livedata.ktx)
     implementation(libs.lifecycle.viewmodel.ktx)
+    implementation("androidx.core:core-ktx:+")
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
