@@ -7,9 +7,10 @@ import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.rappi_u.R
 
-class MainActivity(var adapter: MainAdapter, var recyclerView: Any) : AppCompatActivity(), MainView {
+class MainActivity(var adapter: MainAdapter, var recyclerView: RecyclerView) : AppCompatActivity(), MainView {
 
     private lateinit var presenter: MainPresenter
 
