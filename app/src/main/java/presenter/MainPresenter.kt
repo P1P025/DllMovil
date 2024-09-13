@@ -13,4 +13,14 @@ class MainPresenter(private val view: MainView) {
     fun onRegisterButtonClick() {
         view.navigateToRegisterActivity()
     }
+
+    fun loadItems() {
+
+        val items = listOf(
+                Item("Manzana", "Fresca"),
+                Item("Pera", "Fresca"),
+                Item("Banano", "Fresca")
+        )
+        view.showItems(items)
+    }
 }

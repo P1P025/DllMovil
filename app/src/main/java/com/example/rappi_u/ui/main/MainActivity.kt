@@ -6,9 +6,10 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.rappi_u.R
 
-class MainActivity : AppCompatActivity(), MainView {
+class MainActivity(override var adapter: MainAdapter, override var recyclerView: Any) : AppCompatActivity(), MainView {
 
     private lateinit var presenter: MainPresenter
 
@@ -33,8 +34,19 @@ class MainActivity : AppCompatActivity(), MainView {
         registerButton.setOnClickListener {
             presenter.onRegisterButtonClick()
         }
+
+        recyclerView = findViewById(R.id.recyclerView)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+
+        presenter = MainPresenter(this)
+
+        presenter.loadItems()
     }
 
+    override fun showItems(items: List<Item>) {
+        adapter = MainAdapter(items)
+        recyclerView.adapter = adapter
+    }
     override fun navigateToActivity2() {
         val intent = Intent(this, MainActivity2::class.java)
         startActivity(intent)
