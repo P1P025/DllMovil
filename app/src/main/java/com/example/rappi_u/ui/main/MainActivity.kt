@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.rappi_u.R
 
-class MainActivity(override var adapter: MainAdapter, override var recyclerView: Any) : AppCompatActivity(), MainView {
+class MainActivity(var adapter: MainAdapter, var recyclerView: Any) : AppCompatActivity(), MainView {
 
     private lateinit var presenter: MainPresenter
 
