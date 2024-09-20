@@ -14,13 +14,8 @@ class MainPresenter(private val view: MainView) {
         view.navigateToRegisterActivity()
     }
 
-    fun loadItems() {
-
-        val items = listOf(
-                Item("Manzana", "Fresca"),
-                Item("Pera", "Fresca"),
-                Item("Banano", "Fresca")
-        )
-        view.showItems(items)
+    fun onSearchFocus() {
+        view.navigateToSearch()
     }
+
 }

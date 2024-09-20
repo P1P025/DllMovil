@@ -5,5 +5,6 @@ interface MainView {
     fun navigateToActivity3()
     fun navigateToRegisterActivity()
     fun showMessage(message: String)
-    fun showItems(items: List<Item>)
+
+    fun navigateToSearch()
 }
