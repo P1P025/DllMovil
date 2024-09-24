@@ -6,15 +6,15 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.rappi_u.R
 
-class MainActivity3 : AppCompatActivity(), MainView3 {
+class PayActivity : AppCompatActivity(), PayView {
 
-    private lateinit var presenter: MainPresenter3
+    private lateinit var presenter: PayPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main3)
+        setContentView(R.layout.pay)
 
-        presenter = MainPresenter3(this)
+        presenter = PayPresenter(this)
 
         val button: Button = findViewById(R.id.button)
         button.setOnClickListener {
@@ -23,7 +23,7 @@ class MainActivity3 : AppCompatActivity(), MainView3 {
     }
 
     override fun navigateToMainActivity() {
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, HomeActivity::class.java)
         startActivity(intent)
     }
 }

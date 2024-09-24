@@ -1,6 +1,6 @@
 package com.example.rappi_u.ui.main
 
-class MainPresenter(private val view: MainView) {
+class HomePresenter(private val view: HomeView) {
 
     fun onImageButton1Click() {
         view.navigateToActivity2()

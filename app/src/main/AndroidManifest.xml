@@ -19,13 +19,13 @@
             android:exported="false" />
 
         <activity
-            android:name=".ui.main.MainActivity3"
+            android:name=".ui.main.PayActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.main.MainActivity2"
+            android:name=".ui.main.Shopping_CartActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.main.MainActivity"
+            android:name=".ui.main.HomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

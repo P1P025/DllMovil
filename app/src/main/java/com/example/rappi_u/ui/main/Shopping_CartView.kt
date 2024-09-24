@@ -1,6 +1,6 @@
 package com.example.rappi_u.ui.main
 
-interface MainView2 {
+interface Shopping_CartView {
     fun navigateToMainActivity()
     fun navigateToMainActivity3()
 }

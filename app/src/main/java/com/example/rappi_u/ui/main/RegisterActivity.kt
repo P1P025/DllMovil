@@ -7,9 +7,9 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.rappi_u.R
 import model.DatabaseHelper
 
-class MainActivity4 : AppCompatActivity(), MainView4 {
+class RegisterActivity : AppCompatActivity(), RegisterView {
 
-    private lateinit var presenter: MainPresenter4
+    private lateinit var presenter: RegisterPresenter
     private lateinit var cedulaEditText: EditText
     private lateinit var nameEditText: EditText
     private lateinit var surnameEditText: EditText
@@ -18,10 +18,10 @@ class MainActivity4 : AppCompatActivity(), MainView4 {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main4)
+        setContentView(R.layout.register)
 
         val dbHelper = DatabaseHelper(this)
-        presenter = MainPresenter4(this, dbHelper)
+        presenter = RegisterPresenter(this, dbHelper)
 
 
         cedulaEditText = findViewById(R.id.editTextNumber)

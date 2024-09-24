@@ -6,15 +6,15 @@ import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import com.example.rappi_u.R
 
-class MainActivity2 : AppCompatActivity(), MainView2 {
+class Shopping_CartActivity : AppCompatActivity(), Shopping_CartView {
 
-    private lateinit var presenter: MainPresenter2
+    private lateinit var presenter: Shopping_CartPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main2)
+        setContentView(R.layout.shopping_cart)
 
-        presenter = MainPresenter2(this)
+        presenter = Shopping_CartPresenter(this)
 
         val imageButton: ImageButton = findViewById(R.id.imageButton)
         val imageButton2: ImageButton = findViewById(R.id.imageButton4)
@@ -29,12 +29,12 @@ class MainActivity2 : AppCompatActivity(), MainView2 {
     }
 
     override fun navigateToMainActivity() {
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, HomeActivity::class.java)
         startActivity(intent)
     }
 
     override fun navigateToMainActivity3() {
-        val intent = Intent(this, MainActivity3::class.java)
+        val intent = Intent(this, PayActivity::class.java)
         startActivity(intent)
     }
 }

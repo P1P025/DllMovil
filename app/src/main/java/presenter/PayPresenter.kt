@@ -1,6 +1,6 @@
 package com.example.rappi_u.ui.main
 
-class MainPresenter3(private val view: MainView3) {
+class PayPresenter(private val view: PayView) {
 
     fun onButtonClick() {
         view.navigateToMainActivity()

@@ -3,7 +3,7 @@ package com.example.rappi_u.ui.main
 import android.content.ContentValues
 import model.DatabaseHelper
 
-class MainPresenter4(private val view: MainView4, private val dbHelper: DatabaseHelper) {
+class RegisterPresenter(private val view: RegisterView, private val dbHelper: DatabaseHelper) {
 
     fun saveData(cedula: String, name: String, surname: String, email: String, phone: String, response: String) {
         val db = dbHelper.writableDatabase

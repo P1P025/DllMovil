@@ -8,13 +8,11 @@ import android.widget.SearchView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.rappi_u.R
 
-class MainActivity : AppCompatActivity(), MainView {
+class HomeActivity : AppCompatActivity(), HomeView {
 
-    private lateinit var presenter: MainPresenter
+    private lateinit var presenter: HomePresenter
     private lateinit var constraintLayout: ConstraintLayout
     private lateinit var searchView: SearchView
     private lateinit var imageButton1: ImageButton
@@ -23,9 +21,9 @@ class MainActivity : AppCompatActivity(), MainView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.home)
 
-        presenter = MainPresenter(this)
+        presenter = HomePresenter(this)
 
         imageButton1 = findViewById(R.id.imageButton2)
         imageButton2 = findViewById(R.id.imageButton6)
@@ -52,22 +50,22 @@ class MainActivity : AppCompatActivity(), MainView {
 
         constraintLayout = findViewById(R.id.constraintLayout)
 
-        presenter = MainPresenter(this)
+        presenter = HomePresenter(this)
 
     }
 
     override fun navigateToActivity2() {
-        val intent = Intent(this, MainActivity2::class.java)
+        val intent = Intent(this, Shopping_CartActivity::class.java)
         startActivity(intent)
     }
 
     override fun navigateToActivity3() {
-        val intent = Intent(this, MainActivity3::class.java)
+        val intent = Intent(this, PayActivity::class.java)
         startActivity(intent)
     }
 
     override fun navigateToRegisterActivity() {
-        val intent = Intent(this, MainActivity4::class.java)
+        val intent = Intent(this, RegisterActivity::class.java)
         startActivity(intent)
     }
 

@@ -1,5 +1,5 @@
 package com.example.rappi_u.ui.main
 
-interface MainView3 {
+interface PayView {
     fun navigateToMainActivity()
 }
