@@ -19,14 +19,14 @@ class ProductViewHolder(productView: View): RecyclerView.ViewHolder(productView)
     private val btnAddToCart: Button = productView.findViewById(R.id.btnAddToCart)
     fun bind(product: Product){
         val uri = Uri.parse(product.productImageUrl)
-        nameTextView.text = product.name
-        weightTextView.text = product.weight.toString()
-        priceTextView.text = product.price.toString()
+        nameTextView.text = product.nombre
+        weightTextView.text = product.toString()
+        priceTextView.text = product.precio.toString()
         Glide.with(productImageView.context)
             .load(uri)
             .into(productImageView)
         btnAddToCart.setOnClickListener{
-            Toast.makeText(itemView.context, "Se agrego al carrito el producto: " + product.name, Toast.LENGTH_SHORT).show()
+            Toast.makeText(itemView.context, "Se agrego al carrito el producto: " + product.nombre, Toast.LENGTH_SHORT).show()
         }
     }
 
