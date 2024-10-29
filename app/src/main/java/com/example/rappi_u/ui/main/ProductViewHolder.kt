@@ -20,7 +20,7 @@ class ProductViewHolder(productView: View): RecyclerView.ViewHolder(productView)
     fun bind(product: Product){
         val uri = Uri.parse(product.productImageUrl)
         nameTextView.text = product.nombre
-        weightTextView.text = product.toString()
+        weightTextView.text = product.descripcion
         priceTextView.text = product.precio.toString()
         Glide.with(productImageView.context)
             .load(uri)

@@ -1,6 +1,7 @@
 package com.example.rappi_u.ui.main
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -14,7 +15,7 @@ import retrofit2.Response
 class ProductSearchActivity: AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: ProductViewAdapter
-    var products = listOf<Product>()
+    var products = mutableListOf<Product>()
     lateinit var api: API
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,12 +34,15 @@ class ProductSearchActivity: AppCompatActivity() {
     fun getData(){
         api.getProducto().enqueue(object: Callback<List<Product>>{
             override fun onResponse(p0: Call<List<Product>>, p1: Response<List<Product>>) {
-                products = p1.body()!!
-                adapter.notifyDataSetChanged()
+                products.addAll(p1.body()!!)
+                Log.d("API", products.toString())
+                runOnUiThread {
+                    adapter.notifyDataSetChanged()
+                }
             }
 
             override fun onFailure(p0: Call<List<Product>>, p1: Throwable) {
-                TODO("Not yet implemented")
+                Log.d("API", "FALLO")
             }
 
         })
